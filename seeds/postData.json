@@ -1,0 +1,16 @@
+[
+    {
+      "title": "Javascript typeof fact",
+      "description": "In JavaScript, the typeof operator returns 'object' for arrays, null, and even functions. This is because arrays and functions are technically objects in JavaScript."
+    },
+    {
+      "title": "Python timit fact",
+      "description": "Python has a built-in timeit module that can be used to measure the execution time of small code snippets. This is useful for optimizing code and identifying performance bottlenecks in your Python programs."
+      
+    },
+    {
+      "title": "React",
+      "description": "React is a JavaScript library for building user interfaces. It uses a component-based approach where each component represents a piece of the UI and manages its own state and rendering. React components are written in JSX, a syntax that combines HTML-like tags with JavaScript expressions, and are compiled into JavaScript code that can be executed in the browser."
+    }
+  ]
+  
