@@ -16,8 +16,21 @@ router.get("/", async (req, res) => {
         },
       ],
     });
-
-    const posts = postData.map((p) => p.get({ plain: true }));
+    const posts = await Promise.all(
+      postData.map(async (p) => {
+        const comments = p.comments;
+        const users = await Promise.all(
+          comments.map((c) =>
+            User.findByPk(c.user_id, { attributes: ["name"] })
+          )
+        );
+        const commentsWithUsernames = comments.map((c, i) => ({
+          ...c.toJSON(),
+          name: users[i].name,
+        }));
+        return { ...p.toJSON(), comments: commentsWithUsernames };
+      })
+    );
 
     res.render("homepage", {
       posts,
