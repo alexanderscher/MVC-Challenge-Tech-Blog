@@ -1,44 +1,15 @@
-let image = "";
-
-var myWidget = cloudinary.createUploadWidget(
-  {
-    cloudName: "dujnmblmh",
-    uploadPreset: "foodyconnect",
-  },
-  (error, result) => {
-    if (!error && result && result.event === "success") {
-      image = result.info.thumbnail_url;
-    }
-  }
-);
-
-document.getElementById("upload_widget").addEventListener(
-  "click",
-  function () {
-    myWidget.open();
-  },
-  false
-);
-
 const newFormHandler = async (event) => {
   event.preventDefault();
 
-  const food_name = document.querySelector("#post-name").value.trim();
-  const cuisine = document.querySelector("#post-cuisine").value.trim();
-  const ingredients = document.querySelector("#post-ingrediants").value.trim();
-  const cook_time = document.querySelector("#post-cooktime").value.trim();
+  const title = document.querySelector("#post-title").value.trim();
   const description = document.querySelector("#post-desc").value.trim();
 
-  if (food_name && cuisine && ingredients && cook_time && description) {
-    const response = await fetch(`/api/food`, {
+  if (title && description) {
+    const response = await fetch(`/api/posts`, {
       method: "POST",
       body: JSON.stringify({
-        food_name,
-        cuisine,
-        image,
+        title,
         description,
-        ingredients,
-        cook_time,
       }),
       headers: {
         "Content-Type": "application/json",
