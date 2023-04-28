@@ -42,25 +42,21 @@ router.get("/", async (req, res) => {
   }
 });
 
-router.get("/post/:id", async (req, res) => {
+router.get("/user/:id", withAuth, async (req, res) => {
   try {
-    const postData = await Post.findByPk(req.params.id, {
+    const userData = await User.findByPk(req.params.id, {
       include: [
         {
-          model: User,
-          attributes: ["name"],
+          model: Post,
         },
       ],
     });
-
-    const post = postData.get({ plain: true });
-    res.json(post);
-
-    //   res.render('post', {
-    //     ...project,
-    //     logged_in: req.session.logged_in
-    //   });
+    const user = userData.get({ plain: true });
+    res.render("user", {
+      ...user,
+    });
   } catch (err) {
+    console.log(err);
     res.status(500).json(err);
   }
 });
