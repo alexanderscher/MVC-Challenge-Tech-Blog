@@ -23,7 +23,7 @@ To create an account, click on the "Sign Up" button on the navigation bar and fi
 
 Once logged in, you can create a new post by clicking on the "New Post" button on the dashboard.
 
-To view a post, click on the post title on the homepage.
+To view a user's account, click on the username on the homepage.
 
 To leave a comment on a post, scroll to the bottom of the post page and fill out the comment form.
 
