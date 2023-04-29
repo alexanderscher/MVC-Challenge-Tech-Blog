@@ -25,6 +25,8 @@ const postHandler = async (event) => {
   }
 };
 
-document
-  .querySelector(".comment-button")
-  .addEventListener("click", postHandler);
+if (document.querySelector(".comment-button")) {
+  document
+    .querySelector(".comment-button")
+    .addEventListener("click", postHandler);
+}
