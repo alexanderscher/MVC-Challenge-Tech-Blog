@@ -2,7 +2,7 @@
 
 This is a tech blog web application built using the Model-View-Controller (MVC) architectural pattern. The application allows users to create an account, post tech blog posts, and comment on other posts.
 
-You can visit the live demo of the application at https://radiant-tundra-25619.herokuapp.com/profile.
+You can visit the live demo of the application at https://radiant-tundra-25619.herokuapp.com.
 
 # Technologies Used
 
